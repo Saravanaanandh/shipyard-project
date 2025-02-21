@@ -18,9 +18,9 @@ const PORT = process.env.PORT || 5000
 app.use(cookieParser()) 
 app.use(express.json({ limit: "50mb" }));
 app.use(cors({
-    origin:"http://127.0.0.1:5500" ,
+    origin:"http://127.0.0.1:5500",
     methods: "GET,POST,PATCH,PUT,DELETE",
-    allowedHeaders: ["Content-Type"],
+    allowedHeaders: "Content-Type,Authorization",
     credentials:true
 }))
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
