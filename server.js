@@ -22,6 +22,7 @@ app.use(cors({
     methods: "GET,POST,PATCH,PUT,DELETE",
     allowedHeaders: "Content-Type,Authorization",
     credentials:true
+    
 }))
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use('/api/v1/auth',authRoutes)
