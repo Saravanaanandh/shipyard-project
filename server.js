@@ -9,6 +9,7 @@ import EngineerRoutes from './routes/engineers.route.js'
 import financialRoutes from './routes/financial.route.js' 
 import facilitiesRoutes from './routes/facilities.route.js' 
 import { authendicatedUser } from './middlewares/auth.middleware.js';
+import cors from 'cors'
 dotenv.config()
 
 const app = express()
@@ -16,6 +17,12 @@ const PORT = process.env.PORT || 5000
 
 app.use(cookieParser()) 
 app.use(express.json({ limit: "50mb" }));
+app.use(cors({
+    origin:"*" ,
+    methods: "GET,POST,PATCH,PUT,DELETE",
+    allowedHeaders: ["Content-Type"],
+    credentials:true
+}))
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use('/api/v1/auth',authRoutes)
 app.use('/api/v1/orders',authendicatedUser,buildingRoutes)
