@@ -21,9 +21,9 @@ export const getAllRepairs = async(req, res)=>{
     res.status(200).json({repairs, count:repairs.length})
 }
 export const getSingleRepair = async(req, res)=>{
-    const {id:repairId} = req.params
+    const {id:repairEmail} = req.params
     try{
-        const repair = await Repair.findOne({_id:repairId})
+        const repair = await Repair.findOne({email:repairEmail})
         if(!repair) return res.status(404).json({message:"please check the repairId"})
         res.status(200).json(repair)
     }catch(err){
