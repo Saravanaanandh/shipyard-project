@@ -15,8 +15,8 @@ const RepairSchema = new mongoose.Schema({
         required:true
     },
     yearOfManufacture:{
-        type:Date, 
-        default:Date.now,
+        type:Number, 
+        default:2000,
     },
     issueDescription:{
         type:String, 
