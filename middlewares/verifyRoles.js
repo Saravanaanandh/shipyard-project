@@ -2,7 +2,7 @@ const verifyRoles = (...allowedRoles) => {
     return (req, res, next) => {
         const user = req.user
         const roles = req.roles
-        if (!req?.roles) return res.sendStatus(401); 
+        if (!req?.roles) return res.sendStatus(401).json({message:"Only particular roles are allowed to access it"}); 
         const rolesArray = [...allowedRoles];
         console.log(req.roles)
         console.log(rolesArray)

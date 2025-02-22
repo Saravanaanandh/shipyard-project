@@ -27,15 +27,6 @@ const BuildingOrderSchema = new mongoose.Schema({
         enum:["processing", "completed"],
         default:"processing"
     }, 
-    // {
-    //     "_id": "ObjectId",
-    //     "userId": "ObjectId", // Reference to Users Collection (if applicable)
-    //     "budget": 1000000,
-    //     "preferredTechnology": "Composite Hull",
-    //     "shipType": "Cargo",
-    //     "orderDate": "2025-02-21T12:00:00Z",
-    //     "status": "Processing"
-    // }
 },{timestamps:true})
 
 const BuildingOrder = mongoose.model('BuildingOrder',BuildingOrderSchema)
